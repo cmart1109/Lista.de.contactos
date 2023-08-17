@@ -1,5 +1,9 @@
 //=========================================LISTA DE CONTACTOS=========================================================////
-
+// Este es el entregable para poder agregar o remover contactos de una lista de contactos.
+//Aplique varios de los metodos que hemos aprendido en las clases, sin embargo decidi aprender un 
+//poco mas por mi cuenta y asi aprender a como usar interacciones aqui en VS code.
+//Cualquier cosa respecto al codigo notificarme por favor//
+//diviertanse con los toms//
 const readline = require('readline');
 
 
