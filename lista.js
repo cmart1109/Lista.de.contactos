@@ -1,72 +1,90 @@
-//=========================================LISTA DE CONTACTOS=========================================================////
-// Este es el entregable para poder agregar o remover contactos de una lista de contactos.
-//Aplique varios de los metodos que hemos aprendido en las clases, sin embargo decidi aprender un 
-//poco mas por mi cuenta y asi aprender a como usar interacciones aqui en VS code.
-//Cualquier cosa respecto al codigo notificarme por favor//
-//diviertanse con los toms//
-const readline = require('readline');
-
-
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+//======================== LISTA DE CONTACTOS TOM 2.0 ==================================================================
 
 console.log('BIENVENIDO A LA LISTA DE LOS TOMS')
 console.log('Es hora de revisar su lista')
 
-let lista = ['Tom Cruise', 'Tom Felton','Tom Holland','Tom Hiddleston','Tom el Gato']
+let lista = [
+  {
+    id:20222569,
+    nombre: 'Tom',
+    apellido: 'felton',
+    telefono: 88001170,
+    ubicaciones: {
+      ciudad: 'Londres',
+      direccion: 'Calle los Andes'
+    }
+  },
+
+  {
+    id:20222570,
+    nombre: 'Tom',
+    apellido: 'Holland',
+    telefono: 5550123,
+    ubicaciones: {
+      ciudad: 'New York City',
+      direccion: 'Queens'
+    }
+  }
+  ,  {
+    id:20222571,
+    nombre: 'Tom',
+    apellido: 'El gato',
+    telefono: 229900339,
+    ubicaciones: {
+      ciudad: 'Cartoon Network City',
+      direccion: 'Casa de jerry'
+    }
+  }
+]
 
 function print() {
-    console.log('Esta es la lista de los contactos')
-    for(let i1=0; i1<=lista.length -1; i1++) {
-    
-    console.log(lista[i1])
+  console.log('Esta es la lista de los contactos');
+  console.table(lista);
+}
+
+function add() {
+  nombren = {
+    id:20222572,
+    nombre: 'Tom',
+    apellido: 'Hardy',
+    telefono: 99001122,
+    ubicaciones: {
+      ciudad: 'Vancouver',
+      direccion: 'Canada'
     }
+  }  
+  lista.push(nombren)
+    console.log(nombren.nombre +' ha sido agregado al sistema')
 }
 
-function add(nombre) {
-    lista.push(nombre)
-    console.log(nombre +' ha sido agregado al sistema')
-}
-
-function rmv(nombre2) {
-    let index = lista.indexOf(nombre2);
-    if (index !== -1) {
-      lista.splice(index, 1);
-      console.log(nombre2 + ' ha sido removido del sistema');
-    } else {
-      console.log(nombre2 + ' no se encontró en la lista de contactos');
+function rmv() {
+  let contactoR = {
+    id: 20222569,
+    nombre: 'Tom',
+    apellido: 'felton',
+    telefono: 88001170,
+    ubicaciones: {
+      ciudad: 'Londres',
+      direccion: 'Calle los Andes'
     }
-}
-
-function option() {
-    rl.question("\nQue haremos hoy?:\n1. Ver lista de contactos\n2. Agregar contacto\n3. Eliminar contacto\n4. Salir\nIngrese el número de la opción deseada: ", (opcion) => {
-      switch (opcion) {
-        case "1":
-          print(lista);
-          option();
-          break;
-        case "2":
-          rl.question("Ingrese el nombre del contacto a agregar: ", (nombreA) => {
-            add(nombreA);
-            option();
-          });
-          break;
-        case "3":
-          rl.question("Ingrese el nombre del contacto a eliminar: ", (nombreE) => {
-            rmv(nombreE);
-            option();
-          });
-          break;
-        case "4":
-          rl.close();
-          break;
-        default:
-          console.log("Opción inválida. Por favor, elija una opción válida.");
-          option();
-      }
-    });
+  };
+  
+  for (let i = 0; i < lista.length; i++) {
+    if (lista[i].id === contactoR.id) {
+      lista.splice(i, 1);
+      console.log(contactoR.nombre + ' ha sido removido del sistema');
+      return;
+    }
   }
   
-  option();
+  console.log(contactoR.nombre + ' no se encontró en la lista de contactos');
+}
+
+
+
+
+add()
+
+print()
+
+rmv()
