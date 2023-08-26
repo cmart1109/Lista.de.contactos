@@ -37,51 +37,29 @@ let lista = [
   }
 ]
 
-function print() {
+function imprimir() {
   console.log('Esta es la lista de los contactos');
   console.table(lista);
 }
 
-function add() {
-  nombren = {
-    id:20222572,
-    nombre: 'Tom',
-    apellido: 'Hardy',
-    telefono: 99001122,
-    ubicaciones: {
-      ciudad: 'Vancouver',
-      direccion: 'Canada'
-    }
-  }  
+function agregar(nombren) {
   lista.push(nombren)
     console.log(nombren.nombre +' ha sido agregado al sistema')
 }
 
-function rmv() {
-  let contactoR = {
-    id: 20222569,
-    nombre: 'Tom',
-    apellido: 'felton',
-    telefono: 88001170,
-    ubicaciones: {
-      ciudad: 'Londres',
-      direccion: 'Calle los Andes'
-    }
-  };
-  
+function remover(contactoremover) {  
   for (let i = 0; i < lista.length; i++) {
-    if (lista[i].id === contactoR.id) {
+    if (lista[i].id === contactoremover.id) {
       lista.splice(i, 1);
-      console.log(contactoR.nombre + ' ha sido removido del sistema');
+      console.log(contactoremover.nombre + ' ha sido removido del sistema');
       return;
     }
   }
-  
-  console.log(contactoR.nombre + ' no se encontró en la lista de contactos');
+  console.log(contactoremover.nombre + ' no se encontró en la lista de contactos');
 }
 
 function actualizar() {
-  let basado = {
+  let contactoactualizar = {
     id: 20222571,
     nombre: 'Tom',
     apellido: 'El gato',
@@ -93,9 +71,9 @@ function actualizar() {
   };
 
   for (let i = 0; i < lista.length; i++) {
-    if (lista[i].id === basado.id) {
+    if (lista[i].id === contactoactualizar.id) {
       lista[i] = {  
-        id: 20222571, 
+        id: 20222574, 
         nombre: 'Tom',
         apellido: 'Hiddleston',
         telefono: 229900339,
@@ -104,23 +82,39 @@ function actualizar() {
           direccion: 'Palacio de Odin'
         }
       };
-      console.log(basado.nombre + ' ha sido actualizado en el sistema');
+      console.log(contactoactualizar.nombre + ' ha sido actualizado en el sistema');
       return;
     }
   }
 
-  console.log(basado.nombre + ' no se encontró en la lista de contactos');
+  console.log(contactoactualizar.nombre + ' no se encontró en la lista de contactos');
 }
 console.log('primero miremos la lista original');
-print()
+imprimir()
 console.log('Primero Agregaremos un contacto, sera Tom Hardy');
-add()
 
-print()
+agregar({
+  id:20222572,
+  nombre: 'Tom',
+  apellido: 'Hardy',
+  telefono: 99001122,
+  ubicaciones: {
+    ciudad: 'Vancouver',
+    direccion: 'Canada'}
+}  )
+imprimir()
 console.log('Bien, Ahora vamos a Remover a un Tom, sera Tom Felton');
-rmv()
-print()
+remover({
+  id: 20222569,
+  nombre: 'Tom',
+  apellido: 'felton',
+  telefono: 88001170,
+  ubicaciones: {
+    ciudad: 'Londres',
+    direccion: 'Calle los Andes'
+  }})
+imprimir()
 console.log('Ahora vamos a actualizar algun contacto');
 actualizar()
-print()
+imprimir()
 console.log('Gracias por ver mi lista de contactos');
