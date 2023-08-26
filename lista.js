@@ -94,8 +94,8 @@ console.log('Es hora de revisar su lista')
 
 console.log('primero miremos la lista original');
 imprimir()
-console.log('Primero Agregaremos un contacto, sera Tom Hardy');
 
+console.log('Primero Agregaremos un contacto, sera Tom Hardy');
 agregar({
   id:20222572,
   nombre: 'Tom',
@@ -104,8 +104,9 @@ agregar({
   ubicaciones: {
     ciudad: 'Vancouver',
     direccion: 'Canada'}
-}  )
+})
 imprimir()
+
 console.log('Bien, Ahora vamos a Remover a un Tom, sera Tom Felton');
 remover({
   id: 20222569,
@@ -117,7 +118,9 @@ remover({
     direccion: 'Calle los Andes'
   }})
 imprimir()
+
 console.log('Ahora vamos a actualizar algun contacto');
 actualizar()
 imprimir()
+
 console.log('Gracias por ver mi lista de contactos');
