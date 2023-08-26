@@ -1,8 +1,5 @@
-//======================== LISTA DE CONTACTOS TOM 2.0 ==================================================================
-
-console.log('BIENVENIDO A LA LISTA DE LOS TOMS')
-console.log('Es hora de revisar su lista')
-
+//======================== LISTA DE CONTACTOS TOM 2.0 ================================================================//
+//Base de datos ======================================================================================================//
 let lista = [
   {
     id:20222569,
@@ -36,7 +33,7 @@ let lista = [
     }
   }
 ]
-
+//Funciones de la Lista de contactos =============================================================================//
 function imprimir() {
   console.log('Esta es la lista de los contactos');
   console.table(lista);
@@ -89,6 +86,12 @@ function actualizar() {
 
   console.log(contactoactualizar.nombre + ' no se encontró en la lista de contactos');
 }
+
+//Dialogo Mostrado en Consola =============================================================================================
+
+console.log('BIENVENIDO A LA LISTA DE LOS TOMS')
+console.log('Es hora de revisar su lista')
+
 console.log('primero miremos la lista original');
 imprimir()
 console.log('Primero Agregaremos un contacto, sera Tom Hardy');
